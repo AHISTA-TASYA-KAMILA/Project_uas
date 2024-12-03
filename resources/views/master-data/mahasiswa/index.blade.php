@@ -5,6 +5,7 @@
         </h2>
     </x-slot>
 
+
     <!-- <div class="container p-4 mx-auto">
         <h3 class="text-xl font-semibold">Daftar Mahasiswa</h3> -->
 
@@ -43,7 +44,16 @@
                 <td class="px-4 py-2 border border-black">{{ $mahasiswa->npm }}</td>
                 <td class="px-4 py-2 border border-black">{{ $mahasiswa->nama }}</td>
                 <td class="px-4 py-2 border border-black">{{ $mahasiswa->prodi }}</td>
-                <td class="px-4 py-2 text-center border border-black"></td>
+                <td class="px-4 py-2 text-center border border-black">
+                    <!-- Form untuk Hapus -->
+                    <form action="{{ route('mahasiswa.destroy', $mahasiswa->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+                            Hapus
+                        </button>
+                    </form>
+                </td>
             </tr>
             @empty
             <tr>

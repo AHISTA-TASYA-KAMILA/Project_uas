@@ -21,5 +21,5 @@ Route::middleware('auth')->group(function () {
 Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa.index');
 Route::get('/mahasiswa/create', [MahasiswaController::class, 'create'])->name("mahasiswa.create");
 Route::post('/mahasiswa/store', [MahasiswaController::class, 'store'])->name("mahasiswa.store");
-
+Route::delete('/mahasiswa/{id}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
 require __DIR__ . '/auth.php';

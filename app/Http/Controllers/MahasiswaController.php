@@ -35,4 +35,14 @@ class MahasiswaController extends Controller
         return redirect()->route('mahasiswa.create')->with('success', 'Data mahasiswa berhasil disimpan!');
     }
 
+    public function destroy($id)
+    {
+        // Cari data berdasarkan ID di tabel mahasiswas dan hapus
+        $mahasiswas = Mahasiswa::findOrFail($id);
+        $mahasiswas->delete();
+
+        // Redirect kembali dengan pesan sukses
+        return redirect()->back()->with('success', 'Data mahasiswa berhasil dihapus.');
+    }
+
 }
