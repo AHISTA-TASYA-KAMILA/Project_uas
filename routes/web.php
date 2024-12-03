@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MahasiswaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,4 +22,6 @@ Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa
 Route::get('/mahasiswa/create', [MahasiswaController::class, 'create'])->name("mahasiswa.create");
 Route::post('/mahasiswa/store', [MahasiswaController::class, 'store'])->name("mahasiswa.store");
 Route::delete('/mahasiswa/{id}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
+
+Route::get('/mahasiswa/export/excel', [MahasiswaController::class, 'exportExcel'])->name('mahasiswa-export-excel');
 require __DIR__ . '/auth.php';

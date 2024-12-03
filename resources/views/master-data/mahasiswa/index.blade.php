@@ -26,6 +26,16 @@
     </div>
     @endif
 
+    <!-- Tombol Export to Excel -->
+    <div class="mb-4">
+        <a href="{{ route('mahasiswa-export-excel') }}">
+            <button
+                class="px-6 py-4 text-black bg-blue-200 border border-black rounded-lg shadow-lg hover:bg-blue-500 focus:outline-none focus:ring-1 focus:ring-black">
+                Export to Excel
+            </button>
+        </a>
+    </div>
+
     <!-- Tabel untuk menampilkan data mahasiswa -->
     <table class="min-w-full border border-gray-collapse border-white">
         <thead>
