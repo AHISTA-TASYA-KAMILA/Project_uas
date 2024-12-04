@@ -35,7 +35,7 @@
 
                     <x-slot name="content">
                         <!-- Link to Product Master -->
-                        <x-dropdown-link :href="route('mahasiswa.create')">
+                        <x-dropdown-link :href="route('mahasiswa.index')">
                             DATA MAHASISWA
                         </x-dropdown-link>
 
